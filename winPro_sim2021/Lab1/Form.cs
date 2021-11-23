@@ -207,12 +207,12 @@ namespace Lab1
                 panel_poolTable.Refresh();              // 重新繪畫移動過的方塊
                 if (balls[2].x < 0)                     // 出左邊
                 {  
-                    balls[2].setAng(0);                 // 角度往左邊
+                    balls[2].setAng(0);                 // 角度往右邊
                     balls[2].x = 0;                     // 拉回桌內                    
                 }
                 else if(balls[2].x > width - boxWidth)  // 出右邊
                 {
-                    balls[2].setAng(Math.PI);           // 角度往右邊
+                    balls[2].setAng(Math.PI);           // 角度往左邊
                     balls[2].x = width - boxWidth;      // 拉回桌內
                 }
 
