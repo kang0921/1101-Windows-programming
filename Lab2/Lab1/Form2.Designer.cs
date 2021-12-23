@@ -50,6 +50,8 @@ namespace Lab1
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.pullBackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_welcome
@@ -58,10 +60,9 @@ namespace Lab1
             this.label_welcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(244)))));
             this.label_welcome.Font = new System.Drawing.Font("思源黑體 Medium", 24F, System.Drawing.FontStyle.Bold);
             this.label_welcome.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label_welcome.Location = new System.Drawing.Point(325, 70);
-            this.label_welcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_welcome.Location = new System.Drawing.Point(253, 26);
             this.label_welcome.Name = "label_welcome";
-            this.label_welcome.Size = new System.Drawing.Size(168, 46);
+            this.label_welcome.Size = new System.Drawing.Size(246, 70);
             this.label_welcome.TabIndex = 0;
             this.label_welcome.Text = "Welcome";
             // 
@@ -69,10 +70,9 @@ namespace Lab1
             // 
             this.button_returnForm1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button_returnForm1.Font = new System.Drawing.Font("思源黑體 Medium", 18F, System.Drawing.FontStyle.Bold);
-            this.button_returnForm1.Location = new System.Drawing.Point(235, 510);
-            this.button_returnForm1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_returnForm1.Location = new System.Drawing.Point(274, 581);
             this.button_returnForm1.Name = "button_returnForm1";
-            this.button_returnForm1.Size = new System.Drawing.Size(111, 46);
+            this.button_returnForm1.Size = new System.Drawing.Size(166, 69);
             this.button_returnForm1.TabIndex = 1;
             this.button_returnForm1.Text = "回首頁";
             this.button_returnForm1.UseVisualStyleBackColor = false;
@@ -81,26 +81,25 @@ namespace Lab1
             // panel_poolTable
             // 
             this.panel_poolTable.BackColor = System.Drawing.Color.Green;
-            this.panel_poolTable.Location = new System.Drawing.Point(235, 142);
-            this.panel_poolTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_poolTable.Location = new System.Drawing.Point(74, 109);
             this.panel_poolTable.Name = "panel_poolTable";
-            this.panel_poolTable.Size = new System.Drawing.Size(625, 352);
+            this.panel_poolTable.Size = new System.Drawing.Size(834, 450);
             this.panel_poolTable.TabIndex = 2;
             this.panel_poolTable.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_poolTable_Paint);
             this.panel_poolTable.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_poolTable_MouseDown);
             // 
             // timer1
             // 
+            this.timer1.Interval = 36;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // hit_button
             // 
             this.hit_button.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.hit_button.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hit_button.Location = new System.Drawing.Point(905, 510);
-            this.hit_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hit_button.Location = new System.Drawing.Point(958, 584);
             this.hit_button.Name = "hit_button";
-            this.hit_button.Size = new System.Drawing.Size(124, 46);
+            this.hit_button.Size = new System.Drawing.Size(155, 69);
             this.hit_button.TabIndex = 3;
             this.hit_button.Text = "Hit";
             this.hit_button.UseVisualStyleBackColor = false;
@@ -108,17 +107,19 @@ namespace Lab1
             // 
             // vScrollBar1
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(892, 223);
+            this.vScrollBar1.Location = new System.Drawing.Point(958, 163);
+            this.vScrollBar1.Maximum = 80;
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(60, 227);
+            this.vScrollBar1.Size = new System.Drawing.Size(50, 340);
             this.vScrollBar1.TabIndex = 4;
             this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
             // 
             // vScrollBar2
             // 
-            this.vScrollBar2.Location = new System.Drawing.Point(984, 223);
+            this.vScrollBar2.Location = new System.Drawing.Point(1051, 163);
+            this.vScrollBar2.Maximum = 50;
             this.vScrollBar2.Name = "vScrollBar2";
-            this.vScrollBar2.Size = new System.Drawing.Size(60, 227);
+            this.vScrollBar2.Size = new System.Drawing.Size(50, 340);
             this.vScrollBar2.TabIndex = 5;
             // 
             // label1
@@ -127,10 +128,9 @@ namespace Lab1
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(244)))));
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 15F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label1.Location = new System.Drawing.Point(887, 142);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(925, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 25);
+            this.label1.Size = new System.Drawing.Size(107, 38);
             this.label1.TabIndex = 6;
             this.label1.Text = "打擊力";
             // 
@@ -140,10 +140,9 @@ namespace Lab1
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(244)))));
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 15F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Location = new System.Drawing.Point(976, 142);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(1029, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 25);
+            this.label2.Size = new System.Drawing.Size(107, 38);
             this.label2.TabIndex = 7;
             this.label2.Text = "摩擦力";
             // 
@@ -153,10 +152,9 @@ namespace Lab1
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(244)))));
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label3.Location = new System.Drawing.Point(909, 187);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(965, 109);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 24);
+            this.label3.Size = new System.Drawing.Size(43, 36);
             this.label3.TabIndex = 8;
             this.label3.Text = "大";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -167,10 +165,9 @@ namespace Lab1
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(244)))));
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(999, 187);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(1056, 109);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 24);
+            this.label4.Size = new System.Drawing.Size(43, 36);
             this.label4.TabIndex = 9;
             this.label4.Text = "大";
             // 
@@ -180,10 +177,9 @@ namespace Lab1
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(244)))));
             this.label5.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label5.Location = new System.Drawing.Point(909, 470);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(965, 523);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 24);
+            this.label5.Size = new System.Drawing.Size(43, 36);
             this.label5.TabIndex = 10;
             this.label5.Text = "小";
             // 
@@ -193,19 +189,48 @@ namespace Lab1
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(244)))));
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label6.Location = new System.Drawing.Point(1000, 470);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(1058, 523);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 24);
+            this.label6.Size = new System.Drawing.Size(43, 36);
             this.label6.TabIndex = 11;
             this.label6.Text = "小";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.White;
+            this.checkBox1.Font = new System.Drawing.Font("微軟正黑體", 22F, System.Drawing.FontStyle.Bold);
+            this.checkBox1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.checkBox1.Location = new System.Drawing.Point(611, 584);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(138, 60);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "暫停";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // pullBackButton
+            // 
+            this.pullBackButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pullBackButton.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold);
+            this.pullBackButton.Location = new System.Drawing.Point(783, 584);
+            this.pullBackButton.Name = "pullBackButton";
+            this.pullBackButton.Size = new System.Drawing.Size(152, 69);
+            this.pullBackButton.TabIndex = 13;
+            this.pullBackButton.Text = "拉回";
+            this.pullBackButton.UseVisualStyleBackColor = false;
+            this.pullBackButton.Click += new System.EventHandler(this.pullBackButton_Click);
+            // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1278, 718);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(1195, 674);
+            this.Controls.Add(this.pullBackButton);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -218,7 +243,8 @@ namespace Lab1
             this.Controls.Add(this.panel_poolTable);
             this.Controls.Add(this.button_returnForm1);
             this.Controls.Add(this.label_welcome);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form2";
             this.Text = "遊戲頁面";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -242,5 +268,7 @@ namespace Lab1
         private Label label4;
         private Label label5;
         private Label label6;
+        private CheckBox checkBox1;
+        private Button pullBackButton;
     }
 }

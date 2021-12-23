@@ -40,5 +40,10 @@ namespace Lab1
             f2.Show();
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
