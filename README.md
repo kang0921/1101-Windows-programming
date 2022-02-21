@@ -18,3 +18,7 @@
 - Lab 10：碰撞後 暫停 顯示 球重疊的情形
 - Lab 11：球重疊後 拉回到接觸點
 - Lab 12：碰撞後 暫停時 分開行進方向線
+
+
+https://user-images.githubusercontent.com/42066009/154910292-3f03113b-79fc-40b8-a486-9306df945869.mp4
+
