@@ -2,6 +2,8 @@
 
 - 系級：資工四甲
 - 教授：郭文彥 副教授
+- 學習目標：增進視窗程式基本設計能力
+- Visual Studio 中建立 Windows Forms 應用程式
 
 ## 作業(打撞球)
 
@@ -19,6 +21,6 @@
 - Lab 11：球重疊後 拉回到接觸點
 - Lab 12：碰撞後 暫停時 分開行進方向線
 
-
-https://user-images.githubusercontent.com/42066009/154910292-3f03113b-79fc-40b8-a486-9306df945869.mp4
+## 成品Demo影片
+https://user-images.githubusercontent.com/42066009/154912059-ca3bef18-b46f-4488-85e4-f2eb3bc9166a.mp4
 
