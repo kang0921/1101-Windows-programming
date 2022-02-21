@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Drawing.Drawing2D;
 
 namespace Lab1
 {
@@ -19,6 +20,8 @@ namespace Lab1
         BufferedGraphicsContext currentContext;
         BufferedGraphics gBuffer;
         static int width = 0, height = 0;  //球桌  寬，高
+        Pen penRed, penBlack, penYellow;   // 宣告 3 支筆，碰撞後  暫停時 就要繪圖，固定宣告省事
+
 
         
         class ball  //球 class(類別)
@@ -111,6 +114,12 @@ namespace Lab1
 
             this.panel_poolTable.CreateGraphics(), new Rectangle(0, 0, width, height));
             g = gBuffer.Graphics;
+
+            // 表單 建構者 中 將 3支筆 new, 設定 好
+            penRed = new Pen(Color.Red, 3);  //（顏色 紅，線寬度3像素）
+            penBlack = new Pen(Color.Black, 3);  //（顏色 黑，線寬度3像素）
+            penYellow = new Pen(Color.Yellow, 3);  //（顏色 黃，線寬度3像素）
+            penRed.EndCap = penBlack.EndCap = penYellow.EndCap = LineCap.ArrowAnchor;  // 箭頭尾端
         }
 
         private void panel_poolTable_Paint(object sender, PaintEventArgs e)
@@ -145,7 +154,8 @@ namespace Lab1
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            label_welcome.Text = "歡迎" + ((Form1)Owner).textBox_account.Text;
+            label_welcome.Text = "歡迎 " + ((Form1)Owner).textBox_account.Text;
+            g.Clear(panel_poolTable.BackColor);   // 畫球桌面
 
         }
         private void hit(ball b0, ball b1)
@@ -244,8 +254,26 @@ namespace Lab1
 
         private void pullBackButton_Click(object sender, EventArgs e)
         {
-            pullBack(balls[b0id], balls[b1id]);  // 按 按鈕 後拉回
+            ball b0 = balls[b0id], b1 = balls[b1id];
+            pullBack(b0, b1);  // 按 按鈕 後拉回
             panel_poolTable.Refresh(); // 顯示 球 拉回後 沒重疊，正好互相接觸的情形
+            ball_Line(b0, b0, penBlack);  //  先畫 a: 球 b0 原來 行進方向線，黑色
+            //（先大略做）碰撞 後 方向，力量 分配
+            double dx = b1.x - b0.x, dy = b1.y - b0.y;
+            double ang = Math.Atan2(dy, dx);   //  球b0 中心 到 球b1 中心 連線方向
+            double spd_average = (b0.spd + b1.spd) / 2.0;
+            b0.spd = b1.spd = spd_average;    //  碰撞 後 先大略平均分配 兩球的速度
+            b1.setAng(ang);
+            ball_Line(b0, b1, penRed);      //  畫 c:球 b1 碰撞後 行進方向線，紅色
+            b0.setAng(ang + Math.PI / 2.0);
+            ball_Line(b0, b0, penYellow);  //  畫 b:球 b0 碰撞後 行進方向線，黃色
+            gBuffer.Render();  // 顯示 球 碰撞後 a,b,c 3條行進方向線
+        }
+        private void ball_Line(ball b0, ball b, Pen p)
+        {
+            double x1 = b0.x, y1 = b0.y;   //  起點坐標  為（x1,y1）
+            double x2 = x1 + 7 * b.spd * b.cosA, y2 = y1 + 7 * b.spd * b.sinA;  // spd 為 球的速度, 線長度 為10倍 球的速度
+            g.DrawLine(p, (int)x1, (int)y1, (int)x2, (int)y2);  // 從點（x1,y1）畫到 （x2,y2），箭頭在尾端（x2,y2）
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
